@@ -1,23 +1,12 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General Body Styling */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
   color: #333;
   overflow-x: hidden;
-  padding: 0;
-  transition: background 0.3s ease;
-}
-
-h1, h2 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  color: #333;
+  box-sizing: border-box;
 }
 
 a {
@@ -25,28 +14,48 @@ a {
   color: inherit;
 }
 
-a:hover {
-  color: #FF6347; /* Tomato color */
+h1, h2 {
+  margin: 0;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+/* Parallax Background */
+#parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://wallpapercave.com/wp/QDnTRHS.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transition: transform 0.1s ease-out;
 }
 
 /* Header Section */
 header {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 header h1 {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-  color: white;
+  font-size: 3em;
+  animation: fadeInDown 1s ease;
 }
 
 header p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: white;
+  font-size: 1.2em;
+  animation: fadeInUp 1s ease;
 }
 
 header nav {
@@ -55,39 +64,40 @@ header nav {
 
 header nav a {
   margin: 0 15px;
-  font-size: 1.2rem;
-  color: white;
-  transition: color 0.3s;
+  font-size: 1.1em;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
 header nav a:hover {
-  color: #FF6347;
+  color: #00aaff;
 }
 
 /* About Section */
 #about {
-  padding: 60px 20px;
+  padding: 50px 20px;
   background-color: #fff;
-  color: #333;
   text-align: center;
 }
 
 #about h2 {
-  font-size: 2.5rem;
+  font-size: 2em;
   margin-bottom: 20px;
-  color: #333;
 }
 
 #about p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #666;
+  font-size: 1.1em;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .bouncing-colours {
-  color: #FF6347;
+  display: inline-block;
+  font-weight: 700;
   animation: bounce 2s infinite;
+  background: linear-gradient(45deg, #ff4e50, #ff9068);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 @keyframes bounce {
@@ -104,14 +114,13 @@ header nav a:hover {
 
 /* Projects Section */
 #projects {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
-  color: #333;
+  padding: 50px 20px;
+  background-color: #f7f7f7;
   text-align: center;
 }
 
 #projects h2 {
-  font-size: 2.5rem;
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
@@ -121,157 +130,139 @@ header nav a:hover {
 }
 
 #projects li {
-  margin: 20px 0;
+  background-color: #fff;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#projects a {
-  font-size: 1.3rem;
-  font-weight: bold;
+#projects li a {
+  font-size: 1.3em;
   color: #333;
-  transition: color 0.3s;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
-#projects a:hover {
-  color: #FF6347;
+#projects li a:hover {
+  color: #00aaff;
 }
 
-#projects p {
-  font-size: 1rem;
-  margin-top: 5px;
-  color: #666;
+#projects li p {
+  font-size: 1.1em;
+  color: #555;
 }
 
 /* Contact Section */
 #contact {
-  padding: 60px 20px;
+  padding: 50px 20px;
   background-color: #fff;
-  color: #333;
   text-align: center;
 }
 
 #contact h2 {
-  font-size: 2.5rem;
+  font-size: 2em;
   margin-bottom: 20px;
-  color: #333;
 }
 
 #contact p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #666;
+  font-size: 1.1em;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
-#contact .email-link {
-  color: #FF6347;
-  font-weight: bold;
+form {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 form input, form textarea {
-  width: 80%;
-  padding: 10px;
+  width: 100%;
+  padding: 12px;
   margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+
+form textarea {
+  height: 150px;
 }
 
 form button {
-  background-color: #FF6347;
-  color: white;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  background-color: #00aaff;
+  color: #fff;
   border: none;
-  padding: 15px 30px;
-  font-size: 1.2rem;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
 form button:hover {
-  background-color: #e53e3e;
+  background-color: #0088cc;
 }
 
 /* Footer Section */
 footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
+  background-color: #222;
+  color: #fff;
+  padding: 30px 20px;
   text-align: center;
 }
 
+footer p {
+  font-size: 1.1em;
+}
+
+footer .socials {
+  margin-top: 20px;
+}
+
 footer .socials a {
+  font-size: 1.5em;
   margin: 0 10px;
-  font-size: 1.5rem;
-  color: white;
-  transition: color 0.3s;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
 footer .socials a:hover {
-  color: #FF6347;
+  color: #00aaff;
 }
 
-/* Parallax Background */
-#parallax-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://wallpapercave.com/wp/QDnTRHS.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  transition: transform 0.1s ease-out;
-}
-
-/* Scroll Animations */
-[data-aos="fade-up"] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease-out;
-}
-
-[data-aos="fade-up"].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-[data-aos="fade-down"] {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 1s ease-out;
-}
-
-[data-aos="fade-down"].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive Styles */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 2.5rem;
+    font-size: 2.5em;
   }
 
   header p {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   header nav a {
-    font-size: 1rem;
-    margin: 0 10px;
+    font-size: 1em;
   }
 
-  #about, #projects, #contact {
-    padding: 40px 15px;
+  #about p {
+    font-size: 1em;
+  }
+
+  #projects h2 {
+    font-size: 1.8em;
+  }
+
+  #projects li {
+    padding: 15px;
   }
 
   form input, form textarea {
-    width: 90%;
+    font-size: 1em;
   }
 
-  footer .socials a {
-    font-size: 1.3rem;
+  form button {
+    font-size: 1em;
   }
 }
-
