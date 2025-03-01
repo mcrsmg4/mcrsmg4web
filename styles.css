@@ -11,11 +11,13 @@ body {
   color: #333;
   overflow-x: hidden;
   padding: 0;
+  transition: background 0.3s ease;
 }
 
 h1, h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+  color: #333;
 }
 
 a {
@@ -27,22 +29,24 @@ a:hover {
   color: #FF6347; /* Tomato color */
 }
 
+/* Header Section */
 header {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
   position: relative;
   z-index: 10;
-  color: white;
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 10px;
+  color: white;
 }
 
 header p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
+  color: white;
 }
 
 header nav {
@@ -52,6 +56,7 @@ header nav {
 header nav a {
   margin: 0 15px;
   font-size: 1.2rem;
+  color: white;
   transition: color 0.3s;
 }
 
@@ -70,12 +75,14 @@ header nav a:hover {
 #about h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #333;
 }
 
 #about p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #666;
 }
 
 .bouncing-colours {
@@ -131,6 +138,7 @@ header nav a:hover {
 #projects p {
   font-size: 1rem;
   margin-top: 5px;
+  color: #666;
 }
 
 /* Contact Section */
@@ -144,16 +152,19 @@ header nav a:hover {
 #contact h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #333;
 }
 
 #contact p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #666;
 }
 
 #contact .email-link {
   color: #FF6347;
+  font-weight: bold;
 }
 
 form input, form textarea {
@@ -180,7 +191,7 @@ form button:hover {
   background-color: #e53e3e;
 }
 
-/* Footer */
+/* Footer Section */
 footer {
   background-color: #333;
   color: white;
@@ -213,7 +224,7 @@ footer .socials a:hover {
   transition: transform 0.1s ease-out;
 }
 
-/* Animations */
+/* Scroll Animations */
 [data-aos="fade-up"] {
   opacity: 0;
   transform: translateY(20px);
@@ -235,3 +246,32 @@ footer .socials a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  header nav a {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+
+  #about, #projects, #contact {
+    padding: 40px 15px;
+  }
+
+  form input, form textarea {
+    width: 90%;
+  }
+
+  footer .socials a {
+    font-size: 1.3rem;
+  }
+}
+
