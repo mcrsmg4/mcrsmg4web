@@ -4,35 +4,31 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #f0f0f0;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  transition: background 1s ease-in-out;
+  text-align: center;
+  color: black;
 }
 
-/* Apply background change */
-.background {
-  position: absolute;
+/* Background Styling */
+#background {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  background-size: cover;
+  background-position: center;
   filter: blur(8px);
+  z-index: -1;
 }
 
+/* Header */
 header {
-  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
   padding: 20px;
-  background-color: rgba(34, 34, 34, 0.8);
-  color: #fff;
-  width: 100%;
-  position: relative;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  max-width: 800px;
+  margin: 20px auto;
 }
 
 header h1 {
@@ -40,79 +36,82 @@ header h1 {
   font-size: 2.5em;
 }
 
-header nav {
-  margin-top: 10px;
-}
-
-header nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #fff;
+header p {
   font-size: 1.2em;
-}
-
-header nav a:hover {
-  text-decoration: underline;
+  margin-top: 10px;
 }
 
 /* About Section */
 #about {
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
-  max-width: 800px;
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  backdrop-filter: blur(10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px); /* Apply blur to content box */
 }
 
-#about h2 {
-  text-align: center;
+/* Projects Section */
+#projects {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#projects h2 {
   font-size: 2em;
 }
 
-#about p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  text-align: justify;
-}
-
-/* Proudest Works Section */
-#proudest-works {
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  max-width: 800px;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-}
-
-#proudest-works h2 {
-  font-size: 2.5em;
-  text-align: center;
-}
-
-#proudest-works p {
-  font-size: 1.2em;
-  text-align: center;
-}
-
-#proudest-works ul {
+#projects ul {
   list-style: none;
   padding: 0;
-  margin-top: 10px;
 }
 
-#proudest-works ul li {
-  font-size: 1.1em;
-  margin-bottom: 10px;
+#projects ul li {
+  font-size: 1.2em;
+  margin: 10px 0;
 }
 
-#proudest-works ul li a {
+#projects ul li a {
   color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#projects ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: rgba(34, 34, 34, 0.9);
+  padding: 20px;
+  color: white;
+  position: relative;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.socials {
+  margin-top: 15px;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: white;
+  font-size: 1.2em;
   text-decoration: none;
 }
 
-#proudest-works ul li a:hover {
-  tex
+.socials a:hover {
+  text-decoration: underline;
+}
