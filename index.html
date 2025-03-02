@@ -4,371 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MCRSMG4 - Portfolio</title>
-  <link rel="icon" href="https://your-favicon-link.ico" type="image/x-icon">
-
-  <style>
-    /* General Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #f0f0f0;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      transition: background 1s ease-in-out;
-    }
-
-    /* Apply background change */
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      filter: blur(8px);
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(34, 34, 34, 0.8);
-      color: #fff;
-      width: 100%;
-      position: relative;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    header nav {
-      margin-top: 10px;
-    }
-
-    header nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.2em;
-    }
-
-    header nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* About Section */
-    #about {
-      padding: 20px;
-      max-width: 800px;
-      margin-top: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px); /* Apply blur to content box */
-    }
-
-    #about h2 {
-      text-align: center;
-      font-size: 2em;
-    }
-
-    #about p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-    /* Proudest Works Section */
-    #proudest-works {
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      max-width: 800px;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
-    }
-
-    #proudest-works h2 {
-      font-size: 2.5em;
-      text-align: center;
-    }
-
-    #proudest-works p {
-      font-size: 1.2em;
-      text-align: center;
-    }
-
-    #proudest-works ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 10px;
-    }
-
-    #proudest-works ul li {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-    }
-
-    #proudest-works ul li a {
-      color: #0073e6;
-      text-decoration: none;
-    }
-
-    #proudest-works ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Video Embed */
-    .video-container {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .video-container iframe {
-      border: none;
-    }
-
-    #latest-video {
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      max-width: 800px;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
-    }
-
-    #latest-video button {
-      background-color: #0073e6;
-      color: white;
-      padding: 10px 20px;
-      font-size: 1.2em;
-      border: none;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    #latest-video button:hover {
-      background-color: #005bb5;
-    }
-
-    #video-popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .popup-content {
-      position: relative;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    .popup-content iframe {
-      width: 560px;
-      height: 315px;
-    }
-
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #333;
-      font-size: 2em;
-      cursor: pointer;
-    }
-
-    .close:hover {
-      color: #0073e6;
-    }
-
-    /* osu! Skins Preview Section */
-    #osu-skins {
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      max-width: 800px;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
-    }
-
-    #osu-skins h2 {
-      font-size: 2.5em;
-      text-align: center;
-    }
-
-    .skin-preview {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .skin-preview h3 {
-      font-size: 1.5em;
-    }
-
-    .skin-preview video {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
-    .skin-preview a {
-      display: block;
-      margin-top: 10px;
-      color: #0073e6;
-      font-size: 1.1em;
-      text-decoration: none;
-    }
-
-    .skin-preview a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      padding: 20px;
-      background-color: #222;
-      color: white;
-      width: 100%;
-      text-align: center;
-    }
-
-    footer p {
-      margin: 0;
-    }
-
-    footer .socials {
-      margin-top: 20px;
-    }
-
-    footer .socials a {
-      margin: 0 15px;
-      color: white;
-      font-size: 1.5em;
-      text-decoration: none;
-    }
-
-    footer .socials a:hover {
-      color: #0073e6;
-    }
-  </style>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="background" id="background"></div>
+  <!-- Parallax Background -->
+  <div id="background"></div>
 
+  <!-- Header -->
   <header>
-    <h1>MCRSMG4 - Portfolio</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#proudest-works">Proudest Works</a>
-      <a href="#latest-video">Latest Video</a>
-      <a href="#osu-skins">osu! Skins</a>
-    </nav>
+    <h1>MCRSMG4</h1>
+    <p>I am an osu! player who maps (playing 2025 rendition of RDT) and a gaming enjoyer who has spent so much time on Roblox, I wouldn’t know how many hours I spent on this game.</p>
   </header>
 
+  <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      Hi! I'm MCRSMG4. I'm an osu! player who maps, currently playing the 2025 rendition of RDT. I'm also a gaming enthusiast who has spent countless hours on Roblox, making it hard to track how many hours I've actually spent there!
-    </p>
+    <p>Hi! I’m MCRSMG4, but you can call me MCR. I am an autistic tech creator from the UK, with a bunch of other interests like video editing, streaming, and playing my survival world on Minecraft. I also enjoy British stuff, especially Wallace and Gromit!</p>
   </section>
 
-  <section id="proudest-works">
-    <h2>Proudest Works</h2>
-    <p>Check out my proudest projects:</p>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
     <ul>
-      <li><a href="https://github.com/themcrgames100/7and8.1softwares" target="_blank">7and8.1 Software</a></li>
-      <li><a href="https://github.com/themcrgames100/deleterjoke" target="_blank">DeleterJoke</a></li>
-      <li><a href="https://github.com/themcrgames100/techbrittishonytssoftwarelisting" target="_blank">TechBrittish OnYT Software Listing</a></li>
+      <li><a href="https://github.com/themcrgames100/7and8.1softwares" target="_blank">Windows 7 & 8.1 Software</a></li>
+      <li><a href="https://github.com/themcrgames100/deleterjoke" target="_blank">Deleter Joke</a></li>
+      <li><a href="https://github.com/themcrgames100/techbrittishonytssoftwarelisting" target="_blank">Tech British Software Listing</a></li>
     </ul>
   </section>
 
-  <section id="latest-video">
-    <h2>Latest Video</h2>
-    <div class="video-container">
-      <button onclick="showVideoPopup()">View Latest Video</button>
-    </div>
-    <div id="video-popup">
-      <div class="popup-content">
-        <iframe src="https://www.youtube.com/embed/A5aa4o4LEWA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <span class="close" onclick="closePopup()">&times;</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="osu-skins">
-    <h2>osu! Skins</h2>
-    <div class="skin-preview">
-      <h3>DT Skin Preview</h3>
-      <video controls>
-        <source src="https://ordr.issou.best/watch/1APIHb" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <a href="https://link.issou.best/skin/28625" target="_blank">Download DT Skin</a>
-    </div>
-    <div class="skin-preview">
-      <h3>NM Skin Preview</h3>
-      <video controls>
-        <source src="https://ordr.issou.best/watch/wSjRFd" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <a href="https://link.issou.best/skin/28624" target="_blank">Download NM Skin</a>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 MCRSMG4 - All rights reserved.</p>
+    <p>© 2025 MCRSMG4. All Rights Reserved.</p>
     <div class="socials">
-      <a href="https://github.com/themcrgames100" target="_blank">GitHub</a>
-      <a href="https://twitter.com/mcrsmg4" target="_blank">Twitter</a>
-      <a href="https://discord.gg/xyz" target="_blank">Discord</a>
+      <a href="https://tiktok.com/@yourusername" target="_blank">TikTok</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://discord.gg/yourinvite" target="_blank">Discord</a>
+      <a href="https://twitter.com/yourusername" target="_blank">X (Twitter)</a>
+      <a href="https://youtube.com/yourchannel" target="_blank">YouTube</a>
+      <a href="https://steamcommunity.com/id/yourusername" target="_blank">Steam</a>
     </div>
   </footer>
 
   <script>
-    // Function to show the video popup
-    function showVideoPopup() {
-      document.getElementById('video-popup').style.display = 'flex';
-    }
-
-    // Function to close the video popup
-    function closePopup() {
-      document.getElementById('video-popup').style.display = 'none';
-    }
-
-    // Change background image on load
+    // Background images array
     const backgrounds = [
-      "https://your-image-link-1.jpg",
-      "https://your-image-link-2.jpg",
-      "https://your-image-link-3.jpg"
+      "https://wallpapercave.com/wp/yUSimAc.jpg",
+      "https://wallpapercave.com/wp/URJccpL.jpg",
+      "https://wallpapercave.com/wp/ErpUyPw.jpg"
     ];
 
-    let currentBackground = 0;
-    function changeBackground() {
-      currentBackground = (currentBackground + 1) % backgrounds.length;
-      document.getElementById('background').style.backgroundImage = `url(${backgrounds[currentBackground]})`;
+    function setRandomBackground() {
+      const randomIndex = Math.floor(Math.random() * backgrounds.length);
+      document.getElementById("background").style.backgroundImage = `url(${backgrounds[randomIndex]})`;
     }
 
-    // Change background every 10 seconds
-    setInterval(changeBackground, 10000);
-    changeBackground(); // Set initial background
+    window.onload = setRandomBackground;
   </script>
 
 </body>
