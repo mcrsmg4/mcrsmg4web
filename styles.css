@@ -1,247 +1,241 @@
-/* Reset some basic styling */
-* {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  color: #333;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  color: #000; /* Black text for better readability */
-  background-color: #f5f5f5;
-  overflow-x: hidden;
-}
-
-/* Parallax Background */
-#parallax-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  transition: background 1s ease-in-out;
-}
-
-/* Header */
 header {
   text-align: center;
-  padding: 50px 15px;
-  background: rgba(0, 0, 0, 0.5); /* Add a slight dark overlay for readability */
+  padding: 20px;
+  background-color: #222;
   color: #fff;
+  width: 100%;
 }
 
-h1 {
-  font-size: 4em;
+header h1 {
   margin: 0;
-  font-weight: bold;
-  color: #fff; /* White header text */
+  font-size: 2.5em;
 }
 
-p {
-  font-size: 1.3em;
+header nav {
   margin-top: 10px;
-  color: #fff; /* White paragraph text */
 }
 
-nav {
-  margin-top: 20px;
-}
-
-nav a {
+header nav a {
   margin: 0 15px;
-  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #fff;
+  font-size: 1.2em;
 }
 
-nav a:hover {
+header nav a:hover {
   text-decoration: underline;
-}
-
-/* Section Styles */
-section {
-  padding: 50px 20px;
-  text-align: center;
 }
 
 /* About Section */
 #about {
+  padding: 20px;
+  max-width: 800px;
+  margin-top: 20px;
   background-color: #fff;
-  color: #333;
-  border-bottom: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #about h2 {
+  text-align: center;
   font-size: 2em;
-  margin-bottom: 15px;
 }
 
-.bouncing-colours {
-  display: inline-block;
-  animation: bounce 1s infinite alternate;
+#about p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: justify;
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
+/* Proudest Works Section */
+#proudest-works {
+  padding: 20px;
+  background-color: #fff;
+  max-width: 800px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Projects Section */
-#projects {
-  background-color: #f9f9f9;
-  color: #333;
-  border-bottom: 1px solid #ddd;
+#proudest-works h2 {
+  font-size: 2.5em;
+  text-align: center;
 }
 
-#projects h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+#proudest-works p {
+  font-size: 1.2em;
+  text-align: center;
 }
 
-#projects ul {
+#proudest-works ul {
   list-style: none;
   padding: 0;
+  margin-top: 10px;
 }
 
-#projects li {
-  margin: 20px 0;
-}
-
-h3 {
-  font-size: 1.8em;
-  color: #333;
+#proudest-works ul li {
+  font-size: 1.1em;
   margin-bottom: 10px;
 }
 
-a {
+#proudest-works ul li a {
+  color: #0073e6;
   text-decoration: none;
-  color: #3498db;
-  font-weight: bold;
 }
 
-a:hover {
+#proudest-works ul li a:hover {
   text-decoration: underline;
 }
 
-/* Contact Section */
-#contact {
-  background-color: #fff;
-  padding: 50px 20px;
-  color: #333;
+/* Video Embed */
+.video-container {
+  margin-top: 20px;
+  text-align: center;
 }
 
-#contact h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-}
-
-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-form button {
-  padding: 12px 20px;
-  background-color: #3498db;
-  color: white;
+.video-container iframe {
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1em;
 }
 
-form button:hover {
-  background-color: #2980b9;
+#latest-video {
+  padding: 20px;
+  background-color: #fff;
+  max-width: 800px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#latest-video button {
+  background-color: #0073e6;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#latest-video button:hover {
+  background-color: #005bb5;
+}
+
+#video-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.popup-content iframe {
+  width: 560px;
+  height: 315px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #333;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #0073e6;
+}
+
+/* osu! Skins Preview Section */
+#osu-skins {
+  padding: 20px;
+  background-color: #fff;
+  max-width: 800px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#osu-skins h2 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.skin-preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.skin-preview h3 {
+  font-size: 1.5em;
+}
+
+.skin-preview video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.skin-preview a {
+  display: block;
+  margin-top: 10px;
+  color: #0073e6;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.skin-preview a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
+  padding: 20px;
   background-color: #222;
   color: white;
+  width: 100%;
   text-align: center;
-  padding: 20px;
 }
 
 footer p {
-  font-size: 1em;
   margin: 0;
 }
 
 footer .socials {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 footer .socials a {
   margin: 0 15px;
-  font-size: 1.5em;
   color: white;
+  font-size: 1.5em;
+  text-decoration: none;
 }
 
 footer .socials a:hover {
-  color: #3498db;
-}
-
-/* Email Link */
-.email-link {
-  color: #3498db;
-}
-
-.email-link:hover {
-  text-decoration: underline;
-}
-
-/* Smooth Scrolling for AOS Animations */
-[data-aos="fade-up"] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-[data-aos="fade-up"].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5em;
-  }
-
-  p, nav a {
-    font-size: 1.1em;
-  }
-
-  section {
-    padding: 40px 15px;
-  }
-
-  form input,
-  form textarea {
-    font-size: 0.9rem;
-  }
-
-  footer .socials a {
-    font-size: 1.2em;
-  }
+  color: #0073e6;
 }
