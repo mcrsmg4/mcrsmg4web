@@ -10,8 +10,6 @@
     /* General Styles */
     body {
       font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      color: #333;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -19,14 +17,31 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      background: #f0f0f0;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: background 1s ease-in-out;
+    }
+
+    /* Apply background change */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      filter: blur(8px);
     }
 
     header {
       text-align: center;
       padding: 20px;
-      background-color: #222;
+      background-color: rgba(34, 34, 34, 0.8);
       color: #fff;
       width: 100%;
+      position: relative;
     }
 
     header h1 {
@@ -54,9 +69,10 @@
       padding: 20px;
       max-width: 800px;
       margin-top: 20px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px); /* Apply blur to content box */
     }
 
     #about h2 {
@@ -73,11 +89,12 @@
     /* Proudest Works Section */
     #proudest-works {
       padding: 20px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       max-width: 800px;
       margin-top: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
     }
 
     #proudest-works h2 {
@@ -122,11 +139,12 @@
 
     #latest-video {
       padding: 20px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       max-width: 800px;
       margin-top: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
     }
 
     #latest-video button {
@@ -183,11 +201,12 @@
     /* osu! Skins Preview Section */
     #osu-skins {
       padding: 20px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       max-width: 800px;
       margin-top: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
     }
 
     #osu-skins h2 {
@@ -252,6 +271,8 @@
 </head>
 <body>
 
+  <div class="background" id="background"></div>
+
   <header>
     <h1>MCRSMG4 - Portfolio</h1>
     <nav>
@@ -286,25 +307,24 @@
     </div>
     <div id="video-popup">
       <div class="popup-content">
-        <iframe src="https://www.youtube.com/embed/A5aa4o4LEWA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/A5aa4o4LEWA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <span class="close" onclick="closePopup()">&times;</span>
       </div>
     </div>
   </section>
 
   <section id="osu-skins">
-    <h2>osu! Skin Previews</h2>
+    <h2>osu! Skins</h2>
     <div class="skin-preview">
-      <h3>DT Skin</h3>
+      <h3>DT Skin Preview</h3>
       <video controls>
         <source src="https://ordr.issou.best/watch/1APIHb" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <a href="https://link.issou.best/skin/28625" target="_blank">Download DT Skin</a>
     </div>
-
     <div class="skin-preview">
-      <h3>NM Skin</h3>
+      <h3>NM Skin Preview</h3>
       <video controls>
         <source src="https://ordr.issou.best/watch/wSjRFd" type="video/mp4">
         Your browser does not support the video tag.
@@ -314,24 +334,42 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 MCRSMG4. All Rights Reserved.</p>
+    <p>&copy; 2025 MCRSMG4 - All rights reserved.</p>
     <div class="socials">
-      <a href="https://www.youtube.com/channel/UCKG5GWoY0veXUKpKYNY4c-w" target="_blank">YouTube</a>
       <a href="https://github.com/themcrgames100" target="_blank">GitHub</a>
-      <a href="https://discord.com/invite/your-invite-link" target="_blank">Discord</a>
+      <a href="https://twitter.com/mcrsmg4" target="_blank">Twitter</a>
+      <a href="https://discord.gg/xyz" target="_blank">Discord</a>
     </div>
   </footer>
 
   <script>
-    // Popup for video
+    // Function to show the video popup
     function showVideoPopup() {
       document.getElementById('video-popup').style.display = 'flex';
     }
 
+    // Function to close the video popup
     function closePopup() {
       document.getElementById('video-popup').style.display = 'none';
     }
+
+    // Change background image on load
+    const backgrounds = [
+      "https://your-image-link-1.jpg",
+      "https://your-image-link-2.jpg",
+      "https://your-image-link-3.jpg"
+    ];
+
+    let currentBackground = 0;
+    function changeBackground() {
+      currentBackground = (currentBackground + 1) % backgrounds.length;
+      document.getElementById('background').style.backgroundImage = `url(${backgrounds[currentBackground]})`;
+    }
+
+    // Change background every 10 seconds
+    setInterval(changeBackground, 10000);
+    changeBackground(); // Set initial background
   </script>
-  
+
 </body>
 </html>
